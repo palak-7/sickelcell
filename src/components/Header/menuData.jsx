@@ -1,18 +1,105 @@
 const menuData = [
   {
     id: 1,
-    title: "Home",
-    path: "/",
-    newTab: false,
-  },
-  {
-    id: 2,
     title: "About Us",
     newTab: true,
     submenu: [
       {
-        id: 21,
+        id: 11,
         title: "Who we are and what we do",
+        path: "/who-and-what",
+        newTab: false,
+      },
+      {
+        id: 12,
+        title: "Mission & Vision",
+        path: "/Mission",
+        newTab: false,
+      },
+      {
+        id: 13,
+        title: "History",
+        path: "/history",
+        newTab: false,
+      },
+      {
+        id: 14,
+        title: "National Staff",
+        path: "/leadership",
+        newTab: false,
+      },
+      {
+        id: 15,
+        title: "Board Members",
+        path: "/diversity-inclusion",
+        newTab: false,
+      },
+      {
+        id: 16,
+        title: "MARAC Advisories",
+        newTab: true,
+        submenu: [
+          {
+            id: 161,
+            title: "MARAC Encourages Clinical Research Studies",
+            path: "/who-and-what",
+            newTab: false,
+          },
+          {
+            id: 162,
+            title: "MARAC Advisory Statement: Immunizations",
+            path: "/Mission",
+            newTab: false,
+          },
+          {
+            id: 163,
+            title: "MARAC Advisory Statement: Monkeypox",
+            path: "/history",
+            newTab: false,
+          },
+          {
+            id: 164,
+            title:
+              "MARAC Advisory: COVID-19 and Sickle Cell Disease (March 2022)",
+            path: "/leadership",
+            newTab: false,
+          },
+          {
+            id: 165,
+            title: "Gene Therapy & Bone Marrow Therapies",
+            path: "/diversity-inclusion",
+            newTab: false,
+          },
+          {
+            id: 166,
+            title: "Temporary Suspension of Clinical Trials",
+            path: "/diversity-inclusion",
+            newTab: false,
+          },
+        ],
+      },
+      {
+        id: 17,
+        title: "Financials and Accountability",
+        path: "/diversity-inclusion",
+        newTab: false,
+      },
+      {
+        id: 18,
+        title: "Job Openings",
+        path: "/diversity-inclusion",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Sickle Cell Disease",
+    newTab: true,
+    submenu: [
+      {
+        id: 21,
+        title: "Defination",
         path: "/who-and-what",
         newTab: false,
       },

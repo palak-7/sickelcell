@@ -40,7 +40,7 @@ module.exports = {
         white: "#FFFFFF",
         black: "#121723",
         dark: "#1D2430",
-        primary: "#00b386",
+        primary: "#ed1f24",
         greenNew: "#00a179",
         yellow: "#FBB040",
         "bg-color-dark": "#171C28",
@@ -79,4 +79,8 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    "animate-[fade-in_1s_ease-in-out]",
+    "animate-[fade-in-down_1s_ease-in-out]",
+  ],
 };
