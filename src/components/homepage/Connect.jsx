@@ -17,23 +17,23 @@ const Connect = () => {
     { country: "mx", value: "127318112" }, // mexico
   ];
   return (
-    <div className="grid grid-cols-2 mt-20">
+    <div className="grid lg:grid-cols-2 grid-cols-1 mt-20">
       <div>
-        <div className="font-serif text-4xl text-primary font-bold text-center">
+        <div className="font-serif lg:text-4xl text-2xl text-primary font-bold text-center">
           Connect With Us
         </div>
         <Image
           src="/connect.jpg"
           width={1000}
           height={1000}
-          className="flex justify-center w-full h-[300px] px-20 pt-6"
+          className="flex justify-center lg:w-full lg:h-[300px] lg:px-20 px-10 pt-6"
         />
       </div>
       <div>
-        <div className="font-serif text-4xl text-primary font-bold text-center">
+        <div className="font-serif lg:text-4xl text-2xl mt-5 lg:mt-0 text-primary font-bold text-center">
           Organizations in the World
         </div>
-        <div>
+        <div className="flex justify-center">
           <WorldMap color="red" size="xl" data={data} />
         </div>
       </div>

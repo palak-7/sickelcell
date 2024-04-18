@@ -9,8 +9,8 @@ const page = () => {
     <div>
       <Banner />
       <Connect />
-      <News />
-      <Brands />
+      {/*<News />
+      <Brands /> */}
     </div>
   );
 };

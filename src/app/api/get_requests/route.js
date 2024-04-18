@@ -4,7 +4,7 @@ export async function GET() {
   try {
     const results = await new Promise((resolve, reject) => {
       // Perform the database query
-      connection.query("SELECT * FROM news", (err, results, fields) => {
+      connection.query("SELECT * FROM pending", (err, results, fields) => {
         if (err) {
           reject(err); // Reject the promise if there's an error
         } else {

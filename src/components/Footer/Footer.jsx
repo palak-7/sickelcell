@@ -18,33 +18,9 @@ const Footer = () => {
               src="/logo.png"
               width={280}
               height={100}
-              className="lg:w-[100px] lg:h-[100px] w-[200px] h-[70px]"
+              className="lg:w-[100px] lg:h-[100px] w-[200px] h-[150px]"
               alt="Logo"
             />
-          </Link>
-          <Link
-            href="https://maps.app.goo.gl/ZCnmKXvE3Z7sFDEY9"
-            target="_blank"
-            className="flex ml-3 mb-2 mt-4 hover:underline text-white"
-          >
-            <FaMapLocationDot className="mr-3 mt-1 text-primary" />
-            G-36, First Floor, Outer circle,
-            <br /> Connaught place,
-            <br /> New Delhi - 110001
-          </Link>
-          <Link
-            href="tel:+919582930940"
-            className="flex ml-3 mb-1 hover:underline text-white"
-          >
-            <FaPhoneAlt className="mr-3 mt-1 text-primary" />
-            +91 9582 930 940
-          </Link>
-          <Link
-            href="mailto: info@tekbooster.com"
-            className="hover:underline flex ml-3 mb-1 text-white"
-          >
-            <MdEmail className="mr-3 mt-1 text-primary" />
-            info@tekbooster.com
           </Link>
         </div>
         {/* navlinks and services*/}
@@ -57,27 +33,22 @@ const Footer = () => {
             <ul className="font-medium">
               <li>
                 <Link href="/" className="hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-us" className="hover:underline">
                   About Us
                 </Link>
               </li>
               <li>
+                <Link href="/about-us" className="hover:underline">
+                  Events
+                </Link>
+              </li>
+              <li>
                 <Link href="/services" className="hover:underline">
-                  Services
+                  Initiatives
                 </Link>
               </li>
               <li>
                 <Link href="/blogs" className="hover:underline">
-                  Blogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact-us" className="hover:underline">
-                  Contact Us
+                  Disclaimer
                 </Link>
               </li>
             </ul>
@@ -85,34 +56,30 @@ const Footer = () => {
           {/* services */}
           <div>
             <h2 className="mb-5 text-sm font-semibold uppercase">What We Do</h2>
-            <ul className="font-medium">
-              <li className="">
-                <Link href="/services/SEO" className="hover:underline">
-                  Search Engine Optimization
-                </Link>
-              </li>
-              <li className="">
-                <Link
-                  href="/services/Web-Development"
-                  className="hover:underline"
-                >
-                  Website development
-                </Link>
-              </li>
-              <li className="">
-                <Link href="/services/Branding" className="hover:underline">
-                  Branding
-                </Link>
-              </li>
-              <li className="">
-                <Link
-                  href="/services/Content-Marketing"
-                  className="hover:underline"
-                >
-                  Content Marketing
-                </Link>
-              </li>
-            </ul>
+            <Link
+              href="https://maps.app.goo.gl/ZCnmKXvE3Z7sFDEY9"
+              target="_blank"
+              className="flex ml-3 mb-2 mt-4 hover:underline text-white"
+            >
+              <FaMapLocationDot className="mr-3 mt-1 text-primary" />
+              G-36, First Floor, Outer circle,
+              <br /> Connaught place,
+              <br /> New Delhi - 110001
+            </Link>
+            <Link
+              href="tel:+919582930940"
+              className="flex ml-3 mb-1 hover:underline text-white"
+            >
+              <FaPhoneAlt className="mr-3 mt-1 text-primary" />
+              +91 9582 930 940
+            </Link>
+            <Link
+              href="mailto: info@tekbooster.com"
+              className="hover:underline flex ml-3 mb-1 text-white"
+            >
+              <MdEmail className="mr-3 mt-1 text-primary" />
+              info@tekbooster.com
+            </Link>
           </div>
         </div>
       </div>

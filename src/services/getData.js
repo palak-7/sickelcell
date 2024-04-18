@@ -10,3 +10,14 @@ export async function getAllNews() {
     console.log(error.message);
   }
 }
+
+export async function getRequests() {
+  try {
+    const result = await httpAxios
+      .get("/api/get_requests")
+      .then((response) => response.data);
+    return result;
+  } catch (error) {
+    console.log(error.message);
+  }
+}

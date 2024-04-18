@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <UserProvider>
           <ToastContainer />
-          <Header />
+          <Header admin={process.env.ADMIN_EMAIL} />
           {children}
           <Footer />
         </UserProvider>

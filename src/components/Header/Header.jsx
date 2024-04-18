@@ -2,10 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import menuData from "./menuData";
-
-const Header = () => {
+import UserContext from "@/context/UserContext";
+import { logout } from "@/services/user";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+const Header = ({ admin }) => {
+  const router = useRouter();
+  const context = useContext(UserContext);
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -43,7 +48,16 @@ const Header = () => {
       setSubOpenIndex(index);
     }
   };
-
+  const handleLogout = async () => {
+    try {
+      await logout();
+      context.setUser(undefined);
+      router.push("/login");
+    } catch (error) {
+      console.log(error);
+      toast.error("Logout error", { position: "bottom-center" });
+    }
+  };
   const usePathName = usePathname();
   return (
     <>
@@ -63,7 +77,13 @@ const Header = () => {
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
-                <Image src="/logo.png" alt="logo" width={100} height={100} />
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  className=" w-20 h-20 lg:w-[105px] lg:h-[105px]"
+                  width={100}
+                  height={100}
+                />
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
@@ -199,12 +219,44 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/register"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+                {!context?.user ? (
+                  <Link
+                    href="/login"
+                    className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+                  >
+                    Login
+                  </Link>
+                ) : (
+                  <>
+                    {admin === context?.user?.email ? (
+                      <>
+                        <div>
+                          <Link
+                            href={`admin/${context?.user?.id}`}
+                            className="mb-2 ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+                          >
+                            Admin
+                          </Link>
+                          <button
+                            onClick={handleLogout}
+                            className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+                          >
+                            Log Out
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          onClick={handleLogout}
+                          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+                        >
+                          Log Out
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
               </div>
             </div>
           </div>

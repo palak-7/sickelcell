@@ -71,7 +71,7 @@ function Banner() {
                   }`}
                 >
                   <h1
-                    className={`text-center text-6xl font-serif font-bold bg-white p-2 bg-opacity-70`}
+                    className={`text-center lg:text-6xl text-4xl font-serif font-bold bg-white p-2 bg-opacity-70`}
                   >
                     {d.name}
                   </h1>
