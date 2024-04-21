@@ -14,7 +14,7 @@ const News = () => {
   useEffect(() => {
     async function getNews() {
       const result = await getAllNews();
-      setNews(result.result);
+      setNews(result?.result);
     }
     getNews();
   }, []);
@@ -64,7 +64,7 @@ const News = () => {
       </h1>
       <div className="absolute w-full mt-24">
         <Slider {...settings}>
-          {news.map((d, index) => (
+          {news?.map((d, index) => (
             <Link
               key={d.title}
               href="/"

@@ -21,3 +21,14 @@ export async function getRequests() {
     console.log(error.message);
   }
 }
+
+export async function getDefinitions() {
+  try {
+    const result = await httpAxios
+      .get("/api/get_definitions")
+      .then((response) => response.data);
+    return result;
+  } catch (error) {
+    console.log(error.message);
+  }
+}

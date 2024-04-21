@@ -105,25 +105,25 @@ const menuData = [
           {
             id: 211,
             title: "What is Sickle Cell Disease (SCD)?",
-            path: "/who-and-what",
+            path: "/sickelcell/defination/types",
             newTab: false,
           },
           {
             id: 212,
             title: "What is Sickle Cell Trait (SCT)?",
-            path: "/Mission",
+            path: "/sickelcell/defination/complications",
             newTab: false,
           },
           {
             id: 213,
             title: "Complications & Treatments",
-            path: "/history",
+            path: "/sickelcell/defination/treatments",
             newTab: false,
           },
           {
             id: 214,
             title: "Glossary",
-            path: "/leadership",
+            path: "/sickelcell/defination/glossary",
             newTab: false,
           },
           {
